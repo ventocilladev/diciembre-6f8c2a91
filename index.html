@@ -89,7 +89,7 @@
     <div class="hero-content"><div class="eyebrow">Para <span id="coverName">Harumy Jasmin Varillas Guerrero</span> · De tu esposhito</div><h1>Veinticinco días.<br><em>Mil formas de quererte.</em></h1><p id="heroText">Hice este pequeño rincón de Navidad para ti. Detrás de cada día hay un recuerdo, una promesa o algo que elegí pensando en tu sonrisa.</p><a class="hero-cta" href="#calendario">Descubrir el calendario <span aria-hidden="true">✦</span></a><span class="hero-note">Gracias por amarme · Te amo muchisisísimo ♥</span></div>
     <div class="landscape" aria-hidden="true"><div class="hill back"></div><div class="pine one"></div><div class="pine two"></div><div class="pine three"></div><div class="pine four"></div><div class="house"><span class="window left"></span><span class="window right"></span></div><div class="hill"></div><div class="hill front"></div></div>
   </section>
-  <section class="intro"><div class="wrap"><div class="eyebrow">Para ti, mi vida Harumy</div><h2>Mi vida, cada sobre es otra forma de decirte que te amo.</h2><p>Hay cartas, antojitos, cuidados para ti y tiempo para nosotros. Todo está hecho con cariño, de tu esposhito para ti.</p><div class="ribbon">✦ ✦ ✦</div></div></section>
+  <section class="intro"><div class="wrap"><div class="eyebrow">Para ti, mi vida Harumy</div><h2>Mi vida, cada sobre es otra forma de decirte que te amo.</h2><p>Todo está hecho con cariño, de tu esposhito para ti.</p><div class="ribbon">✦ ✦ ✦</div></div></section>
   <main class="calendar-section" id="calendario"><div class="wrap"><div class="calendar-head"><div><div class="eyebrow" style="color:#a53d40">Abre un sobre al día</div><h2>Tu calendario de Adviento</h2><p>Del 1 al 25 de diciembre. Cada puerta guarda algo para ti.</p></div><div class="legend" id="legend">🔒 Se abre cuando llegue su día</div></div><div class="calendar-grid" id="calendarGrid" aria-label="Calendario de 25 días"></div></div></main>
   <section class="promise"><div class="wrap promise-inner"><div><div class="eyebrow">Nuestra pequeña tradición</div><h2>Lo mejor de regalarte algo es imaginar tu cara al abrirlo.</h2><p>No se trata de gastar mucho. Se trata de encontrar motivos nuevos para decirte que me haces feliz.</p></div><div class="promise-list"><div class="promise-item"><div class="emoji">💌</div><div><b>Palabras que se quedan</b><span>Notas, cartas y razones que merecías escuchar.</span></div></div><div class="promise-item"><div class="emoji">🍓</div><div><b>Antojos elegidos por ti</b><span>Porque tu sabor favorito siempre es el correcto.</span></div></div><div class="promise-item"><div class="emoji">✨</div><div><b>Tiempo para nosotros</b><span>Pequeños planes y momentos que todavía nos esperan.</span></div></div></div></div></section>
   <footer class="footer"><div class="wrap"><strong>Para Harumy, de tu esposhito.</strong><br>Una Navidad hecha a mano, un día a la vez. ✦</div></footer>
@@ -119,11 +119,13 @@
         "awaiting": true
     },
     {
-        "title": "Nuestra playlist",
-        "icon": "🎶",
-        "kind": "Música para nosotros",
-        "body": "Quiero hacer una playlist que suene a nosotros: canciones para caminar, reír y abrazarnos. Elige la primera; yo añadiré otra que me recuerde a ti.",
-        "question": "¿Qué canción ponemos primero?"
+        "title": "Desayuno preparado por mí",
+        "icon": "🥐",
+        "kind": "Una mañana juntos",
+        "body": "Vale por un desayuno preparado por mí para compartirlo contigo con calma. Tú eliges si lo prefieres dulce o salado y yo me encargo del resto.",
+        "question": "¿Qué te gustaría desayunar?",
+        "photo": "assets/desayuno-navidad.png",
+        "caption": "Ilustración del desayuno; el real lo prepararé para ti"
     },
     {
         "title": "Una foto para guardar",
@@ -311,24 +313,23 @@
         "caption": "Ilustración navideña para esta carta"
     },
     {
-        "title": "La víspera contigo",
+        "title": "Tu caja de Nochebuena",
         "icon": "🎁",
-        "kind": "Sorpresa de Nochebuena",
-        "body": "Aquí irá tu mensaje para la noche antes de Navidad.",
+        "kind": "Un regalo especial",
+        "body": "Para Nochebuena prepararé una caja de regalos para ti: fotos nuestras impresas, tus chocolates favoritos, un pequeño detalle de cuidado personal y una carta escrita por mí. Aquí añadiré mi dedicatoria con mis propias palabras.",
         "awaiting": true,
-        "photo": "assets/carta-navidad.png",
-        "caption": "Ilustración navideña para esta carta"
+        "photo": "assets/caja-nochebuena.png",
+        "caption": "Ilustración de la caja de regalos"
     },
     {
-        "title": "Feliz Navidad, mi amor",
+        "title": "Nuestro regalo de Navidad",
         "icon": "❤️",
-        "kind": "Carta y regalo final",
-        "body": "Aquí irá tu carta de Navidad y la dedicatoria del regalo final.",
-        "question": "¿Qué cita especial te gustaría que preparemos?",
+        "kind": "El regalo principal",
+        "body": "Tu regalo de Navidad será un álbum físico hecho por mí con nuestros recuerdos y una pulsera sencilla elegida especialmente para ti. La carta y dedicatoria final las escribiré con mis propias palabras y las añadiré aquí.",
         "letter": true,
         "awaiting": true,
-        "photo": "assets/carta-navidad.png",
-        "caption": "Ilustración navideña para esta carta"
+        "photo": "assets/album-pulsera-navidad.png",
+        "caption": "Ilustración del álbum y la pulsera"
     }
 ];
     const palette=['red','gold','cream','night','pink'];const authorMode=!document.documentElement.dataset.viewer&&(new URLSearchParams(location.search).has('editar')||location.protocol==='file:');
@@ -336,7 +337,7 @@
     let base;
     try{base=embedded?JSON.parse(embedded):null}catch{base=null}
     const initial=base&&Array.isArray(base.days)?base:{recipient:'Harumy Jasmin Varillas Guerrero',sender:'tu esposhito',intro:'Hice este pequeño rincón de Navidad para ti, mi vida. Cada sobre guarda una razón para agradecerte por amarme y para decirte que te amo muchisisísimo.',days:defaults};
-    let state=structuredClone(initial);const storageKey='adviento-2026-v3-'+location.pathname;
+    let state=structuredClone(initial);const storageKey='adviento-2026-v4-'+location.pathname;
     try{const saved=JSON.parse(localStorage.getItem(storageKey)||'null');if(saved&&Array.isArray(saved.days))state=saved}catch{}
     let preview=false,selectedDay=1,opened=0,musicOn=false,audioCtx=null,musicTimer=null;
     const $=id=>document.getElementById(id);$('editBtn').classList.toggle('hidden',!authorMode);$('previewBtn').classList.toggle('hidden',!authorMode);
